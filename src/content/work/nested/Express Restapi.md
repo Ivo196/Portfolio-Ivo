@@ -14,5 +14,5 @@ tags:
 
 Implements a REST API using Express.js and MySQL as database. It provides a set of routes and controllers to perform CRUD operations on the database. The models are defined using the Sequelize ORM to facilitate interaction with the database. You can explore the source code and run the project in your local environment to use the API.
 
-##### <a href="https://github.com/Ivo196/express-mysql-restAPI">GitHub Express restAPI</a>
+##### <a href="https://github.com/Ivo196/express-mysql-restAPI" target="_blank">GitHub Express restAPI</a>
 

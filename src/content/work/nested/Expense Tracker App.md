@@ -21,5 +21,5 @@ In addition, this application uses key React concepts, such as components, state
 In summary, the Expense Tracker React application is a basic expense tracking tool developed with React, which allows users to record and track their personal or business expenses efficiently.
 
 
-##### <a href="https://github.com/Ivo196/Expense-tracker-react">GitHub Expense Tracker App</a>
+##### <a href="https://github.com/Ivo196/Expense-tracker-react" target="_blank">GitHub Expense Tracker App</a>
 

@@ -22,7 +22,7 @@ and synchronise real-time data in the cloud, which
 facilitates the creation of scalable and efficient web
 applications.
 
-##### <a href="https://github.com/Ivo196/Login-React-Firebase-">GitHub Login App</a>
+##### <a href="https://github.com/Ivo196/Login-React-Firebase-" target="_blank">GitHub Login App</a>
 
 
 

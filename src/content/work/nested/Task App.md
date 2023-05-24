@@ -22,5 +22,5 @@ uses localStorage to store the user's tasks, so the
 data is maintained even if the browser tab is closed
 or the computer is restarted.
 
-##### <a href="https://github.com/Ivo196/Tasks-React-app">GitHub Task App</a>
+##### <a href="https://github.com/Ivo196/Tasks-React-app" target="_blank">GitHub Task App</a>
 

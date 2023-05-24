@@ -30,4 +30,4 @@ React and Firebase can be used to create a useful
 and efficient web application that helps the user
 keep track of their expenses.
 
-##### <a href="https://github.com/Ivo196/Expenses-Register-App">GitHub Expenses Register App</a>
+##### <a href="https://github.com/Ivo196/Expenses-Register-App" target="_blank">GitHub Expenses Register App</a>
