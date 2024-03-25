@@ -1,5 +1,6 @@
 # Astro Starter Kit: Portfolio
 
+<!---
 ```
 npm create astro@latest -- --template portfolio
 ```
@@ -11,6 +12,7 @@ npm create astro@latest -- --template portfolio
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+-->
 
 
 ## 🧞 Commands
