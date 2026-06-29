@@ -1,0 +1,84 @@
+---
+import { portfolio } from '../data/portfolio';
+---
+
+<section class="section wrapper" id="stack" aria-labelledby="stack-title">
+	<div class="section-kicker">Technical stack</div>
+	<div class="section-heading">
+		<h2 id="stack-title">Tools for forecasting, validation, and delivery</h2>
+	</div>
+
+	<div class="stack-grid">
+		{
+			portfolio.stack.map((group) => (
+				<article>
+					<h3>{group.category}</h3>
+					<ul>
+						{group.items.map((item) => (
+							<li>{item}</li>
+						))}
+					</ul>
+				</article>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.section {
+		padding-block: 5.5rem;
+	}
+
+	.section-heading {
+		margin-top: 0.8rem;
+	}
+
+	.stack-grid {
+		display: grid;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	article {
+		padding: 1.15rem;
+		border: 1px solid var(--border);
+		border-radius: 1rem;
+		background: var(--surface);
+	}
+
+	h3 {
+		color: var(--text);
+		font-size: 1rem;
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		margin: 1rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		padding: 0.38rem 0.58rem;
+		border: 1px solid var(--border);
+		border-radius: 0.65rem;
+		color: var(--text-soft);
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		background: rgba(255, 255, 255, 0.025);
+	}
+
+	@media (min-width: 42em) {
+		.stack-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 72em) {
+		.stack-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+</style>

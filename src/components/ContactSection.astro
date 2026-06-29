@@ -1,0 +1,59 @@
+---
+import { portfolio } from '../data/portfolio';
+---
+
+<section class="contact-section wrapper" id="contact" aria-labelledby="contact-title">
+	<div>
+		<p class="section-kicker">Contact</p>
+		<h2 id="contact-title">Let’s build better decision systems for energy markets.</h2>
+		<p>
+			I am interested in ML engineering, quantitative research, and forecasting roles where
+			data, physical systems, and decision-making meet.
+		</p>
+	</div>
+	<div class="contact-actions">
+		<a class="button primary" href={portfolio.links.email}>Email me</a>
+		<a class="button" href={portfolio.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+		<a class="button" href={portfolio.links.github} target="_blank" rel="noreferrer">GitHub</a>
+	</div>
+</section>
+
+<style>
+	.contact-section {
+		display: grid;
+		gap: 1.5rem;
+		margin-block: 5.5rem 3rem;
+		padding-block: clamp(2rem, 6vw, 3.5rem);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+	}
+
+	h2 {
+		max-width: 58rem;
+		margin-top: 0.8rem;
+		color: var(--text);
+		font-size: clamp(2.2rem, 6vw, 5rem);
+		line-height: 0.98;
+	}
+
+	p:not(.section-kicker) {
+		max-width: 42rem;
+		margin-top: 1rem;
+		color: var(--muted);
+		font-size: 1.05rem;
+	}
+
+	.contact-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		align-self: end;
+	}
+
+	@media (min-width: 64em) {
+		.contact-section {
+			grid-template-columns: 1fr auto;
+			align-items: end;
+		}
+	}
+</style>

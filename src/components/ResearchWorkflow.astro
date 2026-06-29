@@ -1,0 +1,137 @@
+---
+import { portfolio } from '../data/portfolio';
+---
+
+<section class="section wrapper" id="approach" aria-labelledby="workflow-title">
+	<div class="section-kicker">Research workflow</div>
+	<div class="section-heading">
+		<h2 id="workflow-title">From data to risk-aware decisions</h2>
+	</div>
+
+	<ol class="workflow">
+		{
+			portfolio.workflow.map((step) => (
+				<li>
+					<span class="step-label">{step.label}</span>
+					<div class="step-icon" aria-hidden="true">
+						<span></span>
+					</div>
+					<h3>{step.title}</h3>
+					<p>{step.text}</p>
+				</li>
+			))
+		}
+	</ol>
+</section>
+
+<style>
+	.section {
+		padding-block: 5.5rem;
+	}
+
+	.section-heading {
+		margin-top: 0.8rem;
+	}
+
+	.workflow {
+		display: grid;
+		gap: 1rem;
+		margin: 2rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.workflow li {
+		position: relative;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.45rem 0.9rem;
+		padding: 1rem;
+		border: 1px solid var(--border);
+		border-radius: 0.9rem;
+		background: rgba(255, 255, 255, 0.025);
+	}
+
+	.step-label {
+		grid-column: 1;
+		color: var(--cyan);
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+	}
+
+	.step-icon {
+		grid-column: 1;
+		display: grid;
+		width: 1.75rem;
+		height: 1.75rem;
+		place-items: center;
+		border: 1px solid rgba(57, 213, 255, 0.38);
+		border-radius: 999px;
+		background: rgba(57, 213, 255, 0.08);
+	}
+
+	.step-icon span {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 999px;
+		background: var(--cyan);
+	}
+
+	h3 {
+		grid-column: 2;
+		color: var(--text);
+		font-size: 1rem;
+	}
+
+	p {
+		grid-column: 2;
+		color: var(--muted);
+		font-size: 0.95rem;
+	}
+
+	@media (min-width: 68em) {
+		.workflow {
+			grid-template-columns: repeat(6, 1fr);
+			gap: 0;
+		}
+
+		.workflow li {
+			grid-template-columns: 1fr;
+			align-content: start;
+			min-height: 15rem;
+			border-radius: 0;
+			border-right: 0;
+		}
+
+		.workflow li:first-child {
+			border-radius: 0.9rem 0 0 0.9rem;
+		}
+
+		.workflow li:last-child {
+			border-right: 1px solid var(--border);
+			border-radius: 0 0.9rem 0.9rem 0;
+		}
+
+		.workflow li::after {
+			position: absolute;
+			top: 3.35rem;
+			right: -0.55rem;
+			z-index: 1;
+			width: 1.1rem;
+			height: 1px;
+			content: '';
+			background: var(--cyan);
+		}
+
+		.workflow li:last-child::after {
+			display: none;
+		}
+
+		.step-label,
+		.step-icon,
+		h3,
+		p {
+			grid-column: auto;
+		}
+	}
+</style>

@@ -1,0 +1,113 @@
+---
+import { portfolio } from '../data/portfolio';
+---
+
+<section class="section wrapper" id="experience" aria-labelledby="experience-title">
+	<div class="section-kicker">Domain experience</div>
+	<div class="section-heading">
+		<h2 id="experience-title">Power systems context</h2>
+	</div>
+
+	<div class="experience-grid">
+		<article class="experience-card">
+			<p class="label">Denmark</p>
+			<h3>{portfolio.experience.title}</h3>
+			<p class="subtitle">{portfolio.experience.subtitle}</p>
+			<ul>
+				{portfolio.experience.bullets.map((item) => <li>{item}</li>)}
+			</ul>
+		</article>
+
+		<aside class="why-card">
+			<p class="label">Why this matters</p>
+			<p>{portfolio.experience.why}</p>
+		</aside>
+	</div>
+</section>
+
+<style>
+	.section {
+		padding-block: 5.5rem;
+	}
+
+	.section-heading {
+		margin-top: 0.8rem;
+	}
+
+	.experience-grid {
+		display: grid;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	.experience-card,
+	.why-card {
+		padding: clamp(1.1rem, 3vw, 1.5rem);
+		border: 1px solid var(--border);
+		border-radius: 1rem;
+		background: var(--surface);
+	}
+
+	.label {
+		color: var(--cyan);
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.11em;
+	}
+
+	h3 {
+		margin-top: 0.9rem;
+		color: var(--text);
+		font-size: 1.35rem;
+	}
+
+	.subtitle {
+		margin-top: 0.35rem;
+		color: var(--text-soft);
+	}
+
+	ul {
+		display: grid;
+		gap: 0.65rem;
+		margin: 1.2rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+		padding-left: 1.15rem;
+		color: var(--muted);
+	}
+
+	li::before {
+		position: absolute;
+		left: 0;
+		top: 0.65em;
+		width: 0.42rem;
+		height: 0.42rem;
+		content: '';
+		border-radius: 999px;
+		background: var(--cyan);
+	}
+
+	.why-card {
+		display: grid;
+		align-content: center;
+		background: linear-gradient(145deg, rgba(57, 213, 255, 0.08), rgba(116, 104, 255, 0.05));
+	}
+
+	.why-card p:last-child {
+		margin-top: 1rem;
+		color: var(--text-soft);
+		font-size: 1.1rem;
+		line-height: 1.7;
+	}
+
+	@media (min-width: 58em) {
+		.experience-grid {
+			grid-template-columns: 1.25fr 0.75fr;
+		}
+	}
+</style>

@@ -1,0 +1,179 @@
+---
+import { portfolio } from '../data/portfolio';
+
+const project = portfolio.flagship;
+---
+
+<section class="section wrapper" id="work" aria-labelledby="flagship-title">
+	<div class="section-kicker">Flagship project</div>
+	<div class="section-heading">
+		<h2 id="flagship-title">{project.title}</h2>
+		<p>{project.subtitle}</p>
+	</div>
+
+	<article class="feature-card">
+		<div class="feature-main">
+			<div class="facts">
+				{
+					project.facts.map((fact) => (
+						<div class="fact">
+							<span>{fact.label}</span>
+							<p>{fact.text}</p>
+						</div>
+					))
+				}
+			</div>
+			<div class="disclaimer">
+				<strong>Backtest disclaimer</strong>
+				<p>{project.disclaimer}</p>
+			</div>
+			<div class="project-actions">
+				<a class="button primary" href={portfolio.links.flagshipRepo} target="_blank" rel="noreferrer">
+					View GitHub repository
+				</a>
+				<a class="button" href="#approach">Read methodology</a>
+			</div>
+		</div>
+
+		<aside class="metrics" aria-label="Project metrics">
+			<p class="metric-label">Honest reported results</p>
+			{
+				project.metrics.map((metric) => (
+					<div class="metric">
+						<span>{metric.label}</span>
+						<strong>
+							{metric.value}
+							<small>{metric.unit}</small>
+						</strong>
+					</div>
+				))
+			}
+		</aside>
+	</article>
+</section>
+
+<style>
+	.section {
+		padding-block: 5.5rem;
+	}
+
+	.section-heading {
+		display: grid;
+		gap: 1rem;
+		max-width: 62rem;
+		margin-top: 0.8rem;
+	}
+
+	.section-heading p {
+		max-width: 48rem;
+		color: var(--muted);
+		font-size: 1.1rem;
+	}
+
+	.feature-card {
+		display: grid;
+		gap: 1.5rem;
+		margin-top: 2rem;
+		padding: clamp(1rem, 3vw, 2rem);
+		border: 1px solid var(--border-strong);
+		border-radius: 1.25rem;
+		background: linear-gradient(145deg, rgba(18, 24, 35, 0.96), rgba(11, 15, 23, 0.98));
+		box-shadow: var(--shadow-card);
+	}
+
+	.facts {
+		display: grid;
+		gap: 0.85rem;
+	}
+
+	.fact {
+		display: grid;
+		gap: 0.35rem;
+		padding: 1rem;
+		border: 1px solid var(--border);
+		border-radius: 0.9rem;
+		background: rgba(255, 255, 255, 0.025);
+	}
+
+	.fact span,
+	.metric-label {
+		color: var(--cyan);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		text-transform: uppercase;
+		letter-spacing: 0.11em;
+	}
+
+	.fact p {
+		color: var(--text-soft);
+	}
+
+	.disclaimer {
+		margin-top: 1rem;
+		padding: 1rem;
+		border-left: 2px solid var(--cyan);
+		color: var(--muted);
+		background: rgba(57, 213, 255, 0.06);
+	}
+
+	.disclaimer strong {
+		color: var(--text);
+	}
+
+	.disclaimer p {
+		margin-top: 0.3rem;
+	}
+
+	.project-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 1.25rem;
+	}
+
+	.metrics {
+		display: grid;
+		gap: 0.8rem;
+		align-content: start;
+		padding: 1rem;
+		border: 1px solid var(--border);
+		border-radius: 1rem;
+		background:
+			linear-gradient(180deg, rgba(57, 213, 255, 0.08), transparent),
+			rgba(255, 255, 255, 0.025);
+	}
+
+	.metric {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		padding-block: 0.8rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.metric span {
+		color: var(--muted);
+		font-size: 0.9rem;
+	}
+
+	.metric strong {
+		color: var(--text);
+		font-family: var(--font-mono);
+		font-size: clamp(1.25rem, 4vw, 1.9rem);
+		white-space: nowrap;
+	}
+
+	.metric small {
+		margin-left: 0.3rem;
+		color: var(--muted);
+		font-size: 0.72rem;
+		font-weight: 500;
+	}
+
+	@media (min-width: 60em) {
+		.feature-card {
+			grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.42fr);
+		}
+	}
+</style>

@@ -1,0 +1,166 @@
+<figure class="forecast-visual" aria-label="Static forecast versus actual chart">
+	<div class="chart-header">
+		<span>DK2 / 24H</span>
+		<span>walk-forward</span>
+	</div>
+	<svg viewBox="0 0 640 360" role="img" aria-labelledby="chart-title chart-desc">
+		<title id="chart-title">Forecast versus actual electricity price chart</title>
+		<desc id="chart-desc">
+			A static abstract line chart comparing an actual time series against a forecast.
+		</desc>
+		<defs>
+			<linearGradient id="area-fill" x1="0" x2="0" y1="0" y2="1">
+				<stop offset="0%" stop-color="#39d5ff" stop-opacity="0.22" />
+				<stop offset="100%" stop-color="#39d5ff" stop-opacity="0" />
+			</linearGradient>
+		</defs>
+		<g class="grid-lines">
+			<path d="M72 70H590" />
+			<path d="M72 130H590" />
+			<path d="M72 190H590" />
+			<path d="M72 250H590" />
+			<path d="M140 46V294" />
+			<path d="M240 46V294" />
+			<path d="M340 46V294" />
+			<path d="M440 46V294" />
+			<path d="M540 46V294" />
+		</g>
+		<path
+			class="actual-fill"
+			d="M72 239 C112 211 128 174 160 186 C198 201 209 96 246 111 C283 126 291 224 329 209 C374 191 371 83 417 97 C461 110 466 183 504 169 C540 156 554 117 590 126 L590 294 L72 294 Z"
+		/>
+		<path
+			class="actual-line"
+			d="M72 239 C112 211 128 174 160 186 C198 201 209 96 246 111 C283 126 291 224 329 209 C374 191 371 83 417 97 C461 110 466 183 504 169 C540 156 554 117 590 126"
+		/>
+		<path
+			class="forecast-line"
+			d="M72 228 C108 202 133 190 163 197 C196 204 218 128 251 131 C286 134 301 205 333 196 C372 184 382 115 421 121 C457 126 475 170 508 161 C543 151 558 139 590 145"
+		/>
+		<g class="nodes">
+			<circle cx="246" cy="111" r="4" />
+			<circle cx="417" cy="97" r="4" />
+			<circle cx="590" cy="126" r="4" />
+		</g>
+	</svg>
+	<div class="legend" aria-hidden="true">
+		<span><i class="actual"></i> actual</span>
+		<span><i class="forecast"></i> forecast</span>
+		<span><i class="risk"></i> risk band</span>
+	</div>
+</figure>
+
+<style>
+	.forecast-visual {
+		position: relative;
+		overflow: hidden;
+		border: 1px solid var(--border);
+		border-radius: 1.25rem;
+		background:
+			linear-gradient(180deg, rgba(57, 213, 255, 0.08), transparent 42%),
+			radial-gradient(circle at 80% 10%, rgba(116, 104, 255, 0.16), transparent 36%),
+			var(--surface);
+		box-shadow: var(--shadow-card);
+	}
+
+	.forecast-visual::before {
+		position: absolute;
+		inset: 0;
+		content: '';
+		background-image:
+			linear-gradient(rgba(242, 237, 226, 0.035) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(242, 237, 226, 0.035) 1px, transparent 1px);
+		background-size: 32px 32px;
+		mask-image: linear-gradient(to bottom, black, transparent 95%);
+		pointer-events: none;
+	}
+
+	.chart-header,
+	.legend {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1rem 1rem 0;
+		color: var(--muted);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	svg {
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.grid-lines path {
+		fill: none;
+		stroke: rgba(242, 237, 226, 0.08);
+		stroke-width: 1;
+	}
+
+	.actual-fill {
+		fill: url(#area-fill);
+	}
+
+	.actual-line,
+	.forecast-line {
+		fill: none;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 4;
+	}
+
+	.actual-line {
+		stroke: var(--cyan);
+	}
+
+	.forecast-line {
+		stroke: var(--indigo);
+		stroke-dasharray: 10 10;
+	}
+
+	.nodes circle {
+		fill: var(--text);
+		stroke: var(--cyan);
+		stroke-width: 3;
+	}
+
+	.legend {
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		padding: 0 1rem 1rem;
+		letter-spacing: 0;
+		text-transform: none;
+	}
+
+	.legend span {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.legend i {
+		width: 0.7rem;
+		height: 0.7rem;
+		border-radius: 999px;
+	}
+
+	.legend .actual {
+		background: var(--cyan);
+	}
+
+	.legend .forecast {
+		background: var(--indigo);
+	}
+
+	.legend .risk {
+		background: rgba(242, 237, 226, 0.22);
+	}
+</style>
