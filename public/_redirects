@@ -1,0 +1,5 @@
+/about /#experience 301
+/about/ /#experience 301
+/work /#work 301
+/work/ /#work 301
+/work/* /#work 301
