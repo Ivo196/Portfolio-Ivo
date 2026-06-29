@@ -22,12 +22,11 @@ export const portfolio = {
 	],
 	flagship: {
 		title: 'DK2 Electricity Price Forecasting & Trading Research',
-		subtitle:
-			'End-to-end machine learning research pipeline for 24-hour-ahead electricity price forecasting in the Danish DK2 bidding zone.',
+		subtitle: '24-hour-ahead electricity price forecasting for the Danish DK2 bidding zone.',
 		facts: [
 			{
 				label: 'Data',
-				text: 'Danish electricity prices, weather, consumption/load, wind generation, solar generation, renewable generation, and net load.',
+				text: 'Prices, weather, load, wind, solar, renewables, and net load.',
 			},
 			{
 				label: 'Modeling',
@@ -35,15 +34,15 @@ export const portfolio = {
 			},
 			{
 				label: 'Validation',
-				text: 'Leakage-aware temporal validation and expanding-window walk-forward evaluation.',
+				text: 'Leakage-aware temporal splits and expanding-window walk-forward evaluation.',
 			},
 			{
 				label: 'Decision layer',
-				text: 'Forecast-to-signal logic, simplified economic backtesting, cumulative PnL, drawdown, Value at Risk, and daily loss-limit analysis.',
+				text: 'Forecast-to-signal logic, PnL, drawdown, VaR, and loss-limit analysis.',
 			},
 			{
 				label: 'Engineering',
-				text: 'Modular Python code for features, training, validation, backtesting, risk analysis, unit tests, and lightweight benchmarking where those modules exist in the repository.',
+				text: 'Modular Python for features, training, validation, backtesting, and risk checks.',
 			},
 		],
 		metrics: [
@@ -54,51 +53,50 @@ export const portfolio = {
 			{ label: 'Relative MAE improvement', value: '≈11.7', unit: '%' },
 		],
 		disclaimer:
-			'Economic results are based on a simplified research backtest and do not include all market frictions, liquidity constraints, transaction costs, imbalance costs, or operational constraints.',
+			'Simplified research backtest; excludes full frictions, liquidity, transaction costs, imbalance costs, and operational constraints.',
 	},
 	workflow: [
 		{
 			label: '01',
 			title: 'Market & weather data',
-			text: 'Collect aligned price, load, generation, and weather signals that shape the DK2 market.',
+			text: 'Align price, load, generation, and weather signals.',
 		},
 		{
 			label: '02',
 			title: 'Feature engineering',
-			text: 'Build lagged, calendar, renewable, and net-load features with temporal leakage checks.',
+			text: 'Build lags, calendar features, renewables, and net load.',
 		},
 		{
 			label: '03',
 			title: 'Forecasting models',
-			text: 'Compare simple baselines with XGBoost and sequence models under the same horizon.',
+			text: 'Compare baselines, XGBoost, and sequence models.',
 		},
 		{
 			label: '04',
 			title: 'Walk-forward validation',
-			text: 'Evaluate models on expanding windows to mimic repeated real forecast updates.',
+			text: 'Evaluate with expanding temporal windows.',
 		},
 		{
 			label: '05',
 			title: 'Backtesting',
-			text: 'Translate forecasts into signals and inspect simplified economic behavior over time.',
+			text: 'Translate forecasts into simple signals.',
 		},
 		{
 			label: '06',
 			title: 'Risk controls',
-			text: 'Track drawdown, VaR, loss limits, and failure modes before treating signals as useful.',
+			text: 'Track drawdown, VaR, loss limits, and failure modes.',
 		},
 	],
 	selectedWork: [
 		{
 			title: 'Cryptocurrency Price Forecasting with Autoformer',
 			description:
-				'MSc thesis exploring transformer-based forecasting for volatile cryptocurrency time series. Built an Autoformer pipeline, engineered technical indicators, benchmarked against an LSTM, and generated recursive multi-step forecasts up to 31 days.',
+				'MSc thesis on transformer-based forecasting for volatile crypto time series, benchmarked against LSTM.',
 			tags: ['Python', 'PyTorch', 'Autoformer', 'LSTM', 'Time Series', 'Financial Data'],
 		},
 		{
 			title: 'ML Infrastructure & Reproducible Deployments',
-			description:
-				'Built and deployed local AI and Streamlit applications using Docker, k3s, GitHub Actions, Ollama, and Open WebUI on Raspberry Pi infrastructure.',
+			description: 'Local AI and Streamlit deployments using Docker, k3s, GitHub Actions, and Raspberry Pi infrastructure.',
 			tags: ['Docker', 'Linux', 'k3s', 'Streamlit', 'GitHub Actions', 'MLOps'],
 		},
 	],
@@ -106,12 +104,12 @@ export const portfolio = {
 		title: 'Bravida / Energinet Projects — Denmark',
 		subtitle: 'HV Substation, Protection & Control Interface',
 		bullets: [
-			'Technical coordination with Ramboll and Energinet on critical power infrastructure.',
-			'Commissioning readiness, protection and control interfaces, cabinet wiring, loop checks, and technical documentation.',
-			'Practical understanding of grid assets, operational constraints, and reliability requirements.',
+			'Coordination with Ramboll and Energinet on power infrastructure.',
+			'Commissioning readiness, P&C interfaces, wiring, loop checks, and documentation.',
+			'Grid assets, operational constraints, and reliability requirements.',
 		],
 		why:
-			'My power-systems background gives the forecasting work operational context: electricity markets are shaped by physical assets, renewable generation, grid constraints, and real-world execution.',
+			'Power-systems context matters: electricity markets are shaped by assets, renewables, grid constraints, and execution.',
 	},
 	stack: [
 		{
