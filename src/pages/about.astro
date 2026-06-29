@@ -1,136 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-import ContactCTA from "../components/ContactCTA.astro";
-import Hero from "../components/Hero.astro";
+const target = '/#experience';
 ---
 
-<BaseLayout title="About | Ivo Tonioni" description="About Ivo Tonioni">
-  <div class="stack gap-20">
-    <main class="wrapper about">
-      <Hero
-        title="About me"
-        tagline="Dive into my world. Below, you'll uncover the essence of my professional journey and personal ethos."
-      >
-        <img
-          width="1000"
-          height="100"
-          src="/assets/0.2.jpg"
-          alt="Ivo Tonioni at work with a colleague"
-        />
-      </Hero>
-
-      <section>
-        <h2 class="section-title">Background</h2>
-        <div class="content">
-          <p>
-            I am Ivo Tonioni, a dedicated Engineer and Web Developer whose
-            passion lies at the intersection of technology and innovation. With
-            a robust educational foundation in Electromechanical Engineering and
-            Artificial Intelligence, and hands-on experience in software
-            development, I have honed my skills across a spectrum of programming
-            languages and technologies.
-          </p>
-          <p>
-            Currently leading as a WebFlow Engineer for the Nordic Software
-            Blockchain Association, I specialize in ensuring seamless digital
-            experiences through meticulous maintenance, troubleshooting, and
-            team coordination. My previous role as a Machine Learning Engineer
-            allowed me to delve into energy consumption analytics, underscoring
-            my versatility in tackling diverse challenges across sectors.
-          </p>
-          <p>
-            My professional ethos is fueled by a continuous quest for knowledge,
-            a passion for problem-solving, and a commitment to excellence. I
-            thrive in environments that challenge my abilities and offer
-            opportunities for growth and innovation. I am eager to collaborate
-            with forward-thinking teams and contribute to projects that leverage
-            technology to make a meaningful impact.
-          </p>
-        </div>
-      </section>
-      <section>
-        <h2 class="section-title">Education</h2>
-        <div class="content">
-          <p>
-            Master of Science in Artificial Intelligence, International
-            University of La Rioja
-          </p>
-          <p>
-            Bachelor of Engineering in Electromechanical, National Technological
-            University
-          </p>
-        </div>
-      </section>
-      <section>
-        <h2 class="section-title">Skills</h2>
-        <div class="content">
-          <p>
-            Python | TypeScript | JavaScript | MongoDB | Next.js | React | Astro
-            | WebFlow | TensorFlow | Keras | AI | Machine Learning
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <ContactCTA />
-  </div>
-</BaseLayout>
-
-<style>
-  .about {
-    display: flex;
-    flex-direction: column;
-    gap: 3.5rem;
-  }
-
-  img {
-    margin-top: 1.5rem;
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-md);
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: var(--gray-200);
-  }
-
-  .section-title {
-    grid-column-start: 1;
-    font-size: var(--text-xl);
-    color: var(--gray-0);
-  }
-
-  .content {
-    grid-column: 2 / 4;
-  }
-
-  .content :global(a) {
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
-  }
-
-  .content :global(a:hover),
-  .content :global(a:focus) {
-    text-decoration-color: currentColor;
-  }
-
-  @media (min-width: 50em) {
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 60% 1fr;
-    }
-
-    .about > :global(:first-child) {
-      grid-column-start: 2;
-    }
-
-    section {
-      display: contents;
-      font-size: var(--text-lg);
-    }
-  }
-</style>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="refresh" content={`0; url=${target}`} />
+		<link rel="canonical" href={target} />
+		<title>Redirecting to Ivo Tonioni</title>
+	</head>
+	<body>
+		<p>Redirecting to <a href={target}>Ivo Tonioni's portfolio</a>.</p>
+	</body>
+</html>
